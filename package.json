@@ -1,5 +1,5 @@
 {
-  "name": "piggy-io-server",
+  "name": "cash-cache",
   "version": "1.0.0",
   "description": "io server to recieve and post coins to api based on adruino board",
   "main": "server.js",
@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Jeff Abraham & Matt Bajorek",
+  "license": "ISC",
+  "dependencies": {
+    "onoff": "^1.1.1"
+  }
 }
