@@ -34,7 +34,7 @@ function handlePulse (err, state) {
     buttonCount = 0;
     console.log('Button count reset to:', buttonCount);
     pulsing = false;
-  }, 6000)
+  }, 600)
 }
 
 // pass the button callback function to the 
