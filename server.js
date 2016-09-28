@@ -12,10 +12,9 @@ function handlePulse (err, state) {
     console.log('err: ', err);
     return;
   }
-  console.log('state: ', state);
   // if coinInput state does not equal 1 log
   // & return out of function
-  if(state !== 1) {
+  if (state !== 1) {
     console.log('State did not equal 1!?');
     return;
   }
@@ -26,10 +25,8 @@ function handlePulse (err, state) {
   pulsing = true;
   // otherwise set timeout to clear count
   setTimeout(function () {
-    console.log('Pulse count:', pulseCount);
     requests.postCoinInput(pulseCount);
     pulseCount = 0;
-    console.log('Pulse count reset to:', pulseCount);
     pulsing = false;
   }, 600)
 }
