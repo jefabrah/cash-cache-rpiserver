@@ -4,23 +4,28 @@
    postCoinInput: function (pulseCount) {
       console.log('Pulse Count:',pulseCount);
       // get coin value from pulse count
-      let coin;
+      let coinValue;
+      let coinType;
       switch (pulseCount) {
          case 1:
             console.log('penny');
-            coin = 1;
+            coinValue = 1;
+	    coinType = 'pennies';
             break;
          case 2:
             console.log('nickel');
-            coin = 5;
+            coinValue = 5;
+	    coinType = 'nickels';
             break;
          case 3:
             console.log('dime');
-            coin = 10;
+            coinValue = 10;
+            coinType = 'dimes';
             break;
          case 4:
             console.log('quarter');
-            coin = 25;
+            coinValue = 25;
+            coinType = 'quarters';
             break;
          default:
             console.log('Invalid pulse');
@@ -28,17 +33,18 @@
       }
 
       // send coin to API server
-      let url = '192.168.1.162:3000/coin';
+      let url = 'http://192.168.1.162:3000/coin';
 
       axios.post(url, {
-       coin: coin
+       coinValue: coinValue,
+       coinType: coinType
      })
      .then(function (response) {
-       console.log(response);
+       console.log(response.data);
      })
      .catch(function (error) {
        console.log('POST error: ', error);
      });
-     
+
    }
  };
