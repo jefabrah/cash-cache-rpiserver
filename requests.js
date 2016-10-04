@@ -27,14 +27,18 @@
             return;
       }
 
-   //    axios.post('/api/coin', {
-   //     coin: coin
-   //   })
-   //   .then(function (response) {
-   //     console.log(response);
-   //   })
-   //   .catch(function (error) {
-   //     console.log(error);
-   //   });
+      // send coin to API server
+      let url = '192.168.1.162:3000/coin';
+
+      axios.post(url, {
+       coin: coin
+     })
+     .then(function (response) {
+       console.log(response);
+     })
+     .catch(function (error) {
+       console.log('POST error: ', error);
+     });
+     
    }
  };
