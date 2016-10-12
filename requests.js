@@ -1,4 +1,5 @@
  const axios = require('axios');
+ const username = 'username';
 
  module.exports = {
    postCoinInput: function (pulseCount) {
@@ -37,7 +38,8 @@
 
       axios.post(url, {
        coinValue: coinValue,
-       coinType: coinType
+       coinType: coinType,
+       username: username
      })
      .then(function (response) {
        console.log(response.data);
