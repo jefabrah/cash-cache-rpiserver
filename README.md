@@ -22,7 +22,7 @@ IO & HTTP server for coin input from CH-926 coin accepter to [Cash Cache Web App
 
 ## Getting Started
 
-Go to the Cash [Cache Site](http://cash-cache.herokuapp.com) and sign up
+Go to the [Cash Cache Site](http://cash-cache.herokuapp.com) and sign up
 **Take note of the username you use. You will need this later**
 
 ## Raspberry Pi Configuration
@@ -48,6 +48,25 @@ Go to the Cash [Cache Site](http://cash-cache.herokuapp.com) and sign up
 ## Coin Accepter Wiring and Configuaration
 
 ### Note the ground from the coin accepter is also going to the ground on the raspberry pi and the Gray 'Counter' wire is unused on the coin accepter
+
+1. Wire the coin accepter to the raspberry pi using the diagram below
+
+![alt text][logo]
+
+[logo]: https://github.com/jefabrah/cash-cache-rpiserver/blob/master/cash-cache-diagram.png "Wiring Diagram"
  
- 
- 
+2. Folling the [CH-926 instructions](https://cdn-shop.adafruit.com/datasheets/CHmulticoin.jpg) program the coins below to their appropriate pulses
+  * pennies = 1 pulse
+  * nickels = 2 pulses
+  * dimes = 3 pulses
+  * quarters = 4 pulses
+  
+## Starting the Server
+
+### Given the you have wired and programmed the coin accepter properly, the server and coin accepter are now ready to be used
+
+1. Double check you have wired the coin accepter properly and renamed the username variable in requests.js
+
+2. Install npm dependencies `npm i`
+
+3. Run the server `node server.js`
