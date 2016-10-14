@@ -34,7 +34,7 @@
       }
 
       // send coin to API server
-      let url = 'http://192.168.1.162:3000/coin';
+      let url = 'http://cash-cache.herokuapp.com/coin';
 
       axios.post(url, {
        coinValue: coinValue,
