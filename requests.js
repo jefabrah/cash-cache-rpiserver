@@ -1,5 +1,5 @@
  const axios = require('axios');
- const username = 'username';
+ const username = 'username'; // change 'username' to your username
 
  module.exports = {
    postCoinInput: function (pulseCount) {

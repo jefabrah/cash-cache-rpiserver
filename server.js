@@ -1,4 +1,4 @@
-// coinInput is attaced to pin 17, led to 18
+// coinInput is attaced to pin 17
 const requests = require('./requests'),
       GPIO = require('onoff').Gpio,
       coinInput = new GPIO(17, 'in', 'rising');
@@ -12,12 +12,8 @@ function handlePulse (err, state) {
     console.log('err: ', err);
     return;
   }
-  // if coinInput state does not equal 1 log
-  // & return out of function
-  if (state !== 1) {
-    console.log('State did not equal 1!?');
-    return;
-  }
+  // if state doesn't equal 1 return
+  if (state !== 1) return;
   // increment pulse count
   pulseCount++;
   // if pulsing started return
@@ -31,5 +27,5 @@ function handlePulse (err, state) {
   }, 600)
 }
 
-// pass the coinInput callback function to the
+// set the coinInput callback function to handlePulse
 coinInput.watch(handlePulse);
